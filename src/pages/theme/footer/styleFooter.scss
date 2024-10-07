@@ -1,0 +1,69 @@
+@use 'sass:map';
+@import '../../../style/style.scss';
+
+.footer {
+    .footer__about {
+        margin-bottom: 30px;
+
+        .footer__about_logo {
+            margin-bottom: 15px;
+            display: inline-block;
+            color: rgb(245, 135, 151);
+            text-transform: uppercase;
+        }
+
+        ul {
+            li {
+                font-size: 15px;
+                color: map.get($theme-colors,'main');
+                display: flex;
+                align-items: center;
+                column-gap: 2px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .footer__widget {
+        margin-bottom: 30px;
+
+        .footer__widget_logo {
+            margin-bottom: 15px;
+            display: inline-block;
+            color: rgb(245, 135, 151);
+            text-transform: uppercase;
+        }
+
+        ul {
+            li {
+                font-size: 15px;
+                color: map.get($theme-colors,'main');
+                display: flex;
+                align-items: center;
+                column-gap: 2px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .footer__title {
+        margin-bottom: 30px;
+
+        .footer__title_logo{
+            margin-bottom: 15px;
+            display: inline-block;
+            color: rgb(245, 135, 151);
+            text-transform: uppercase;
+        }
+        ul{
+            li{
+                font-size: 15px;
+                color: map.get($theme-colors,'main');
+                display: flex;
+                align-items: center;
+                column-gap: 2px;
+                line-height: 30px;
+            }
+        }
+    }
+}
