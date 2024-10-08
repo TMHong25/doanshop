@@ -2,6 +2,10 @@
 @import '../../../style/style.scss';
 
 .footer {
+    border-top: 5px solid lightpink; 
+    border-bottom: 3px solid lightpink; 
+    padding: 20px 0;
+    background: #f2f2f2;
     .footer__about {
         margin-bottom: 30px;
 
@@ -66,4 +70,11 @@
             }
         }
     }
+}
+
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: map.get($theme-colors, 'main');
 }

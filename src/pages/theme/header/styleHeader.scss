@@ -7,24 +7,24 @@
 
 .header__top_left {
     ul {
-        display: inline-flex; 
-        align-items: center; 
-        justify-content: center; 
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         list-style: none;
         column-gap: 20px;
         padding: 10px 0 13px;
-        
-        li{
+
+        li {
             font-size: 15px;
-            color: map.get($theme-colors,'main');
+            color: map.get($theme-colors, 'main');
             display: flex;
             align-items: center;
             column-gap: 2px;
         }
 
-        li:first-child{
+        li:first-child {
             position: relative;
-            &:after{
+            &:after {
                 position: absolute;
                 right: -10px;
                 top: 1px;
@@ -32,19 +32,16 @@
                 width: 1px;
                 background: rgb(132, 130, 130);
                 content: "";
-
             }
         }
     }
-    
 }
 
 .header__top_right {
-    display: grid;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 10px 0 13px;
-    
 
     ul {
         display: flex;
@@ -56,99 +53,98 @@
             font-size: 15px;
             display: inline-block;
             color: map.get($theme-colors, 'main');
-
         }
 
-        li:last-child{
+        li:last-child {
             margin-left: 10px;
-            cursor: pointer;  // hover vào có bàn tay hiện lên
-            span{
+            cursor: pointer;
+
+            span {
                 font-size: 14px;
                 margin-left: 2px;
             }
-
         }
     }
-
 }
 
 .header__logo {
     display: flex;
     align-items: center;
-    padding: 15px 0 ;
+    padding: 15px 0;
 }
 
-.header__menu{
-    padding: 24px 0 ;
+.header__menu {
+    padding: 24px 0;
 
     ul {
-        display: flex;   
+        display: flex;
         justify-content: space-between;
 
-        li{
-            list-style: none;  
+        li {
+            list-style: none;
             position: relative;
             margin-left: 10px;
-            
+
             a {
                 text-decoration: none;
                 font-size: 15px;
-                // text-transform: uppercase;   // đổi thành chữ in hoa
-                font-weight: bold;   // chữ đậm
+                font-weight: bold;
                 transition: all 0.3s;
                 padding: 5px 0;
                 display: block;
-               
             }
-            a:hover{
+
+            a:hover {
                 color: red;
             }
         }
 
-        li:hover .header__menu_child{
-            opacity: 1;  // hiển thị
-            visibility: visible; // hiển thị
+        li:hover .header__menu_child {
+            opacity: 1;
+            visibility: visible;
         }
-        
-        .active a{
+
+        .active a {
             color: map.get($theme-colors, 'main');
         }
+
         .header__menu_child {
-            background:rgb(216, 216, 216);
+            background: rgb(216, 216, 216);
             display: block;
             position: absolute;
             width: 180px;
             padding: 5px 0;
             transition: all 0.3s;
-            opacity: 0;  // lúc nào cũng ẩn đi
-            visibility: hidden; // k hiển thị
+            opacity: 0;
+            visibility: hidden;
             text-align: left;
         }
-}
+    }
 }
 
-.header__cart{
+.header__cart {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px 0px;
+    padding: 24px 0;
 
-    ul{
+    ul {
         display: flex;
         margin-right: 25px;
-        
-        li{
+
+        li {
             position: relative;
             list-style: none;
             margin-left: 20px;
 
-            svg{
+            svg {
                 font-size: 20px;
                 color: map.get($theme-colors, 'main');
             }
-            span{
+
+            span {
                 color: rgb(88, 88, 88);
-                background: map.get($theme-colors,'main_2');
+                background: map.get($theme-colors, 'main_2');
                 position: absolute;
                 border-radius: 50%;
                 font-size: 12px;
@@ -161,5 +157,106 @@
             }
         }
     }
+}
+
+.product__list {
+    position: relative;
+
+    .product__list_all {
+        background: map.get($theme-colors, 'main_2');
+        padding: 15px 20px 15px 40px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+
+        svg {
+            font-size: 20px;
+            margin-right: 3px;
+        }
+
+        span {
+            font-size: 16px;
+            color: map.get($theme-colors, 'main');
+            margin-right: 5px;
+        }
+    }
+
+    ul {
+        position: absolute;
+        opacity: 1;
+        width: 99.5%;
+        border: 1px solid #d6d5d5;
+        background: #fff;
+        list-style: none;
+        transition: all 0.2s;
+
+        li {
+            text-align: left;
+            padding-left: 50px;
+            text-decoration: none;
+
+            a {
+                text-decoration: none;
+                color: map.get($theme-colors, 'main');
+                font-size: 16px;
+                line-height: 30px;
+                display: block;
+            }
+
+            a:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+.header__bottom_search {
+    .search__form {
+        width: 610px;
+        height: 50px;
+        float: left;
+
+        form{
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            border: none;
+            height: 50px;
+            width: 70%; 
+            font-size: 16px;
+            margin-left: 20px; 
+            border: 1px solid #a8a4a4;
+            box-sizing: border-box; 
     
+            :focus {
+                outline: none;
+                border: none;
+            }
+        }
+        
+        button {
+            height: 50px; 
+            background: lightpink;
+            border: none;
+            font-weight: 500;
+            display: inline-block;
+            padding: 0 20px; 
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+    .bottom__phone {
+        align-items: center;
+
+        .phone__icon{
+
+        }
+        .phone__text{
+            margin-left: 100px;
+        }
+    
+    }
 }
