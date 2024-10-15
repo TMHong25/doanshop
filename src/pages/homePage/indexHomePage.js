@@ -2,14 +2,12 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './styleHomePage.scss';
 import { memo } from 'react';
-import featProducts from './allProducts'; 
-
+import featProducts, { renderFeaturedProducts } from './allProducts';
 import slider1 from './img/slider1.png';
 import slider2 from './img/slider2.png';
 import slider3 from './img/slider3.png';
 import slider4 from './img/slider4.png';
 import slider5 from './img/slider5.png';
-
 
 const HomePage = () => {
     const responsive = { 
@@ -32,11 +30,11 @@ const HomePage = () => {
     }; 
 
     const sliderItem = [
-        { bgImg : slider1 },
-        { bgImg : slider2 },
-        { bgImg : slider3 },
-        { bgImg : slider4 },
-        { bgImg : slider5 },
+        { bgImg: slider1 },
+        { bgImg: slider2 },
+        { bgImg: slider3 },
+        { bgImg: slider4 },
+        { bgImg: slider5 },
     ];
 
     return (
@@ -57,21 +55,7 @@ const HomePage = () => {
                 <div className="featured">
                     <div className="section_title">
                         <h2>Sản phẩm nổi bật</h2>
-                        {
-                           featProducts[0].products.map((item, key) => (
-                                <div className="products" key={key}>
-                                    <div className="products_img">
-                                        <img src={item.img} alt={item.name} />
-                                    </div>
-                                    <div className="products_name">
-                                        <h4>{item.name}</h4>
-                                    </div>
-                                    <div className="products_price">
-                                        <span>{item.price}</span>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                        { renderFeaturedProducts(featProducts) }
                     </div>
                 </div>
             </div>
