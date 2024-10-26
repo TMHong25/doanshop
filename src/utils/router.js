@@ -1,7 +1,10 @@
 export const ROUTERS = {
     USER: {
-        HOME: "",
+       HOME: "",
        PROFILE: "thong-tin-ca-nhan",
        PRODUCT: "/san-pham",
+    },
+    PRODUCT: {
+        DETAIL: "/details",
     }
 } 

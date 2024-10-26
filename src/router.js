@@ -2,7 +2,9 @@ import {Route, Routes } from "react-router-dom";
 import { ROUTERS } from "./utils/router";
 import HomePage from "./pages/homePage/indexHomePage"; 
 import ProfilePage from "./pages/profilePage/indexProfilePage";
+import ProductDetailsPage from "pages/details/product_details_page";
 import MasterLayout from './pages/theme/masterlayout/indexMasterLayout'; 
+import { compile } from "sass";
 
 
 const renderUserRouter = () => {
@@ -15,7 +17,10 @@ const renderUserRouter = () => {
       path: ROUTERS.USER.PROFILE,
       component: <ProfilePage />, 
     },
-
+    {
+      path: ROUTERS.PRODUCT.DETAIL,
+      component: <ProductDetailsPage />
+    }
   ];
 
   return (

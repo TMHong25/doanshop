@@ -2,7 +2,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './styleHomePage.scss';
 import { memo } from 'react';
-import featProducts, { renderFeaturedProducts } from './allProducts';
+import featProducts, { RenderFeaturedProducts } from './allProducts';
 import slider1 from './img/slider1.png';
 import slider2 from './img/slider2.png';
 import slider3 from './img/slider3.png';
@@ -55,7 +55,7 @@ const HomePage = () => {
                 <div className="featured">
                     <div className="section_title">
                         <h2>Sản phẩm nổi bật</h2>
-                        { renderFeaturedProducts(featProducts) }
+                        { RenderFeaturedProducts(featProducts) }
                     </div>
                 </div>
             </div>

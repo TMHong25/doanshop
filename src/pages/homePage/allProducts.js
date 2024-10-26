@@ -1,7 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { useState } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import { formatter } from 'utils/formater';
+import { useNavigate } from 'react-router-dom';
 
 import product1 from './img/product1.png';
 import product12 from './img/product12.png';
@@ -20,10 +20,11 @@ import product42 from './img/product42.png';
 import product43 from './img/product43.png';
 import product44 from './img/product44.png';
 
-export const renderFeaturedProducts = (data) => {
+export const RenderFeaturedProducts = (data) => {
     // Lấy danh sách tiêu đề từ dữ liệu
     const tabTitles = Object.keys(data).map(key => data[key].title);
-    
+    const navigator = useNavigate()
+
     return (
         <Tabs onSelect={(index) => console.log('âbc')}>
             <TabList>
@@ -37,7 +38,11 @@ export const renderFeaturedProducts = (data) => {
                     {/* <h3>{data[key].title}</h3> */}
                     <ul>
                         {data[key].products.map((product, i) => (
-                            <li key={i} onSelect={(index) => console.log('1234')}>
+                            <li key={i} onClick={(index) => {
+                                    console.log('1234');
+                                    navigator("thong-tin-ca-nhan");
+                                }
+                            }>
                                 <img src={product.img} alt={product.name} />
                                 <h4>{product.name}</h4>
                                 <p>{formatter(product.price)}</p>
