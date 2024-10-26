@@ -53,6 +53,7 @@
     font-weight: bold;
     max-width: 1100px;
     justify-content: center;
+    color: map.get($theme-colors,'main');
 
     ul {
         list-style: none;
