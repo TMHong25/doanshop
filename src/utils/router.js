@@ -5,6 +5,6 @@ export const ROUTERS = {
        PRODUCT: "/san-pham",
     },
     PRODUCT: {
-        DETAIL: "/details",
+        DETAIL: "details",
     }
 } 
