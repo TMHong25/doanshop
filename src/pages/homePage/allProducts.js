@@ -40,7 +40,7 @@ export const RenderFeaturedProducts = (data) => {
                         {data[key].products.map((product, i) => (
                             <li key={i} onClick={(index) => {
                                     console.log('1234');
-                                    navigator("details");
+                                    navigator("/details");
                                 }
                             }>
                                 <img src={product.img} alt={product.name} />
