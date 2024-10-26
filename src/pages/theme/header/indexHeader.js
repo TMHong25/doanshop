@@ -91,7 +91,7 @@ const Header = () => {
 
             <div className="container">
                 <div className="row header__bottom">
-                    <FloatMenu />
+                    <FloatMenu onclick={() => setProductList(!isProductList)} isProductList={isProductList} />
                     <SearchForm />
                 </div>
             </div>
@@ -231,12 +231,13 @@ const SearchForm = () => {
   );
 };
 
-const FloatMenu = () => {
+
+const FloatMenu = ({onClick, isProductList}) => {
   return (
     <div className="col-lg-3 product__list">
       <div
         className="product__list_all"
-        onClick={() => setProductList(!isProductList)}
+        onClick={onclick}
       >
         <IoMenuOutline />
         Danh sách sản phẩm
