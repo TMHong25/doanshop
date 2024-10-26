@@ -1,102 +1,112 @@
-import {memo, useState} from 'react';
-import './styleHeader.scss';
-import { FaFacebook, FaInstagramSquare, FaTiktok, FaRegUser, FaTelegram, FaPhone } from "react-icons/fa";
+import { memo, useState } from "react";
+import "./styleHeader.scss";
+import {
+  FaFacebook,
+  FaInstagramSquare,
+  FaTiktok,
+  FaRegUser,
+  FaTelegram,
+  FaPhone,
+} from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { IoMenuOutline } from "react-icons/io5";
-import { formatter } from 'utils/formater';
-import { ROUTERS } from 'utils/router';
+import { formatter } from "utils/formater";
+import { ROUTERS } from "utils/router";
 
 const Header = () => {
-    const [isProductList, setProductList] = useState(true);
-    const [menus] = useState([
+  const [isProductList, setProductList] = useState(true);
+  const [menus] = useState([
+    {
+      name: "Trang chủ",
+      path: ROUTERS.USER.HOME,
+    },
+    {
+      name: "Sản phẩm",
+      path: ROUTERS.USER.PRODUCT,
+    },
+    {
+      name: "Gấu Teddy",
+      path: ROUTERS.USER.HOME,
+      isShowSubMenu: false,
+      child: [
         {
-            name: 'Trang chủ',
-            path: ROUTERS.USER.HOME,
+          name: "Gấu Teddy cao cấp",
+          path: "#",
         },
         {
-            name: 'Sản phẩm',
-            path: ROUTERS.USER.PRODUCT,
+          name: "Gấu Teddy cỡ nhỏ",
+          path: "#",
         },
         {
-            name: 'Gấu Teddy',
-            path: ROUTERS.USER.HOME,
-            isShowSubMenu: false,
-            child: [
-                {
-                    name: 'Gấu Teddy cao cấp',
-                    path: '#'
-                },
-                {
-                    name: 'Gấu Teddy cỡ nhỏ',
-                    path: '#',
-                },
-                {
-                    name: 'Gấu Teddy cỡ to',
-                    path: '#',
-                }
-            ]
+          name: "Gấu Teddy cỡ to",
+          path: "#",
+        },
+      ],
+    },
+    {
+      name: "Gấu hoạt hình",
+      path: ROUTERS.USER.HOME,
+      isShowSubMenu: false,
+      child: [
+        {
+          name: "Gấu bông cho bé",
+          path: "",
         },
         {
-            name: 'Gấu hoạt hình',
-            path: ROUTERS.USER.HOME,
-            isShowSubMenu: false,
-            child: [
-                {
-                    name: 'Gấu bông cho bé',
-                    path: ''
-                },
-                {
-                    name: 'Gấu bông chính hãng MEETOO',
-                    path: ''
-                },
-                {
-                    name: 'Gấu bông HOT',
-                    path: ''
-                },
-            ]
+          name: "Gấu bông chính hãng MEETOO",
+          path: "",
         },
         {
-            name: 'Thú bông',
-            path: ROUTERS.USER.HOME,
-            isShowSubMenu: false,
-            child: [
-                {
-                    name: 'Các loài vật',
-                    path: ''
-                },
-                {
-                    name: 'Thú bông khác',
-                    path: ''
-                }
-            ]
+          name: "Gấu bông HOT",
+          path: "",
+        },
+      ],
+    },
+    {
+      name: "Thú bông",
+      path: ROUTERS.USER.HOME,
+      isShowSubMenu: false,
+      child: [
+        {
+          name: "Các loài vật",
+          path: "",
         },
         {
-            name: 'Thông Tin',
-            path: ROUTERS.USER.HOME,
-        }
-    ]);
+          name: "Thú bông khác",
+          path: "",
+        },
+      ],
+    },
+    {
+      name: "Thông Tin",
+      path: ROUTERS.USER.HOME,
+    },
+  ]);
 
-    return (
-        <>
-           <HeaderTop />
-            <div className="container">
-                <div className="row">
-                    <HeaderLogo />
-                    <HeaderMenu menus={menus} />
-                    <HeaderCart />
-                </div>
-            </div>
+  return (
+    <>
+      <HeaderTop />
+      <div className="container">
+        <div className="row">
+          <HeaderLogo />
+          <HeaderMenu menus={menus} />
+          <HeaderCart />
+        </div>
+      </div>
 
-            <div className="container">
-                <div className="row header__bottom">
-                    <FloatMenu onclick={() => setProductList(!isProductList)} isProductList={isProductList} />
-                    <SearchForm />
-                </div>
-            </div>
-        </>
-    );
+      <div className="container">
+        <div className="row header__bottom">
+          <FloatMenu
+            onclick={() => setProductList(!isProductList)}
+            isProductList={isProductList}
+          />
+          <SearchForm />
+        </div>
+      </div>
+    </>
+  );
 };
 
 // Header top
@@ -154,7 +164,7 @@ const HeaderTop = () => {
 
 // Header menu
 // Tạo component bằng cách truyền properties
-const HeaderMenu = ({menus}) => {
+const HeaderMenu = ({ menus }) => {
   return (
     <div className="col-xl-6">
       <nav className="header__menu">
@@ -190,7 +200,7 @@ const HeaderLogo = () => {
   );
 };
 
-// Cart 
+// Cart
 const HeaderCart = () => {
   return (
     <div className="col-xl-3">
@@ -237,15 +247,12 @@ const SearchForm = () => {
   );
 };
 
-// FloatMenu 
+// FloatMenu
 // Truyền tham số props cho child component handler
-const FloatMenu = ({onClick, isProductList}) => {
+const FloatMenu = ({ onClick, isProductList }) => {
   return (
     <div className="col-lg-3 product__list">
-      <div
-        className="product__list_all"
-        onClick={onclick}
-      >
+      <div className="product__list_all" onClick={onclick}>
         <IoMenuOutline />
         Danh sách sản phẩm
       </div>

@@ -1,16 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom';
-import RouterCustom from './router';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
+import RouterCustom from "./router";
 
 import "./pages/homePage/styleHomePage.scss";
-import './style/style.scss'
+import "./style/style.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <RouterCustom />
-   
   </BrowserRouter>
 );
