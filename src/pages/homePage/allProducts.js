@@ -1,4 +1,5 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useState } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import { formatter } from 'utils/formater';
 
@@ -22,9 +23,9 @@ import product44 from './img/product44.png';
 export const renderFeaturedProducts = (data) => {
     // Lấy danh sách tiêu đề từ dữ liệu
     const tabTitles = Object.keys(data).map(key => data[key].title);
-
+    
     return (
-        <Tabs>
+        <Tabs onSelect={(index) => console.log('âbc')}>
             <TabList>
                 {tabTitles.map((title, index) => (
                     <Tab key={index}>{title}</Tab>
@@ -36,7 +37,7 @@ export const renderFeaturedProducts = (data) => {
                     {/* <h3>{data[key].title}</h3> */}
                     <ul>
                         {data[key].products.map((product, i) => (
-                            <li key={i}>
+                            <li key={i} onSelect={(index) => console.log('1234')}>
                                 <img src={product.img} alt={product.name} />
                                 <h4>{product.name}</h4>
                                 <p>{formatter(product.price)}</p>
