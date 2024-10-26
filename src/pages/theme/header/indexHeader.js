@@ -99,6 +99,7 @@ const Header = () => {
     );
 };
 
+// Header top
 const HeaderTop = () => {
   return (
     <div className="header__top">
@@ -151,6 +152,8 @@ const HeaderTop = () => {
   );
 };
 
+// Header menu
+// Tạo component bằng cách truyền properties
 const HeaderMenu = ({menus}) => {
   return (
     <div className="col-xl-6">
@@ -176,6 +179,7 @@ const HeaderMenu = ({menus}) => {
   );
 };
 
+// Logo
 const HeaderLogo = () => {
   return (
     <div className="col-xl-3">
@@ -186,6 +190,7 @@ const HeaderLogo = () => {
   );
 };
 
+// Cart 
 const HeaderCart = () => {
   return (
     <div className="col-xl-3">
@@ -206,6 +211,7 @@ const HeaderCart = () => {
   );
 };
 
+// Thanh search
 const SearchForm = () => {
   return (
     <div className="col-lg-9 header__bottom_search">
@@ -231,7 +237,8 @@ const SearchForm = () => {
   );
 };
 
-
+// FloatMenu 
+// Truyền tham số props cho child component handler
 const FloatMenu = ({onClick, isProductList}) => {
   return (
     <div className="col-lg-3 product__list">
