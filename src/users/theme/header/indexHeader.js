@@ -11,53 +11,46 @@ import { Link } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { formatter } from "utils/formater";
 
+const LoginInfo = <div className="col-6 header__top_right">
+  <ul>
+    <li>
+      <Link to={"#"}>
+        <FaFacebook />
+      </Link>
+    </li>
+    <li>
+      <Link to={"#"}>
+        <FaInstagramSquare />{" "}
+      </Link>
+    </li>
+    <li>
+      <Link to={"#"}>
+        <FaTiktok />{" "}
+      </Link>
+    </li>
+    <li>
+      <Link to={"#"}>
+        {" "}
+        <FaTelegram />{" "}
+      </Link>
+    </li>
+    <li>
+      <Link to={"#"}>
+        {" "}
+        <FaRegUser />
+      </Link>
+      <span>Đăng nhập</span>
+    </li>
+  </ul>
+</div>;
 const Header = () => {
   return (
     <>
       <div className="header__top">
         <div className="container">
           <div className="row">
-            <div className="col-6 header__top_left">
-              <ul>
-                <li>
-                  <IoIosMail />
-                  tmhonggg@gmail.com
-                </li>
-                <li>Miễn phí giao hàng từ {formatter(50000)}</li>
-              </ul>
-            </div>
-            <div className="col-6 header__top_right">
-              <ul>
-                <li>
-                  <Link to={"#"}>
-                    <FaFacebook />
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"#"}>
-                    <FaInstagramSquare />{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"#"}>
-                    <FaTiktok />{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"#"}>
-                    {" "}
-                    <FaTelegram />{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"#"}>
-                    {" "}
-                    <FaRegUser />
-                  </Link>
-                  <span>Đăng nhập</span>
-                </li>
-              </ul>
-            </div>
+            <EmailInfo />
+            <LoginInfo />
           </div>
         </div>
       </div>
@@ -74,3 +67,15 @@ const Header = () => {
 };
 
 export default memo(Header);
+function EmailInfo() {
+  return <div className="col-6 header__top_left">
+    <ul>
+      <li>
+        <IoIosMail />
+        tmhonggg@gmail.com
+      </li>
+      <li>Miễn phí giao hàng từ {formatter(50000)}</li>
+    </ul>
+  </div>;
+}
+
